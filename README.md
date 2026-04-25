@@ -93,7 +93,7 @@ Box is a fork of [Google AI Edge Gallery](https://github.com/google-ai-edge/gall
 | Inference engines | llama.cpp (GGUF LLMs), stable-diffusion.cpp (image gen), whisper.cpp (STT) alongside LiteRT |
 | Model import | Import any local GGUF file — not limited to the curated download list |
 | NPU / TPU | All Snapdragon / Tensor / MediaTek variants bundled in one APK (upstream ships per-SoC) |
-| Voice mode | Free talk (continuous hands-free loop) and Vision talk (live camera + voice) |
+| Voice mode / Vision mode| Free talk (continuous hands-free loop) and Vision talk (live camera + voice) |
 | Image generation | On-device Stable Diffusion via GGUF |
 | Speech-to-text | On-device Whisper STT |
 | Document analysis | Attach text files directly in chat |

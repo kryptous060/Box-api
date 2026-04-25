@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/jegly/Box/main/images/box-header2.svg" alt="Box Header" width="800" />
+<img src="https://raw.githubusercontent.com/jegly/Box/main/images/box-header.svg" alt="Box Header" width="800" />
 
 [![Kotlin](https://img.shields.io/badge/Kotlin-90.4%25-6272A4.svg?logo=kotlin&logoColor=white)](https://kotlinlang.org)
 [![Android](https://img.shields.io/badge/Android-16%2B-50FA7B.svg?logo=android&logoColor=white)](https://developer.android.com)
@@ -7,6 +7,7 @@
 [![llama.cpp](https://img.shields.io/badge/llama.cpp-GGUF-FFB86C.svg)](https://github.com/ggerganov/llama.cpp)
 [![stable-diffusion.cpp](https://img.shields.io/badge/stable--diffusion.cpp-GGUF-FFB86C.svg)](https://github.com/leejet/stable-diffusion.cpp)
 [![whisper.cpp](https://img.shields.io/badge/whisper.cpp-STT-FFB86C.svg)](https://github.com/ggerganov/whisper.cpp)
+[![Voice Mode](https://img.shields.io/badge/Voice%20Mode-Speech--to--Speech-50FA7B.svg)]()
 [![LiteRT](https://img.shields.io/badge/LiteRT-NPU-FF79C6.svg)](https://ai.google.dev/edge/litert)
 [![Snapdragon NPU](https://img.shields.io/badge/Snapdragon-NPU%208Gen2%2F3%2FElite-FF79C6.svg)](https://www.qualcomm.com/products/mobile/snapdragon)
 [![Google Tensor](https://img.shields.io/badge/Google%20Tensor-TPU%20G3%2FG4%2FG5%20(Pixel%208--10)-FF79C6.svg)](https://store.google.com/gb/category/phones)
@@ -18,21 +19,11 @@
 [![Hybrid Engine](https://img.shields.io/badge/Engine-LiteRT%20%2B%20llama.cpp-BD93F9.svg)]()
 [![Fork](https://img.shields.io/badge/Fork-Google%20AI%20Edge-6272A4.svg)](https://github.com/google-ai-edge/gallery)
 
-<a href="https://www.buymeacoffee.com/jegly"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee" height="41" width="174"></a> 
-If this project helped you, please ⭐️ star it to help others find it 
-
-
-
-**A security-hardened fork of [Google AI Edge Gallery](https://github.com/google-ai-edge/gallery) — with on-device image generation, voice input, document analysis, vision AI, biometric lock, encrypted chat history, llama.cpp support, and GGUF model import.**
+**A security-hardened fork of [Google AI Edge Gallery](https://github.com/google-ai-edge/gallery) — with on-device image generation, voice mode (speech-to-speech AI chat), voice input, document analysis, vision AI, biometric lock, encrypted chat history, llama.cpp support, and GGUF model import.**
 
 ## Disclaimer
 
-**Box is not affiliated with or endorsed by Google LLC in any way.**
-
-This is an independent, community-driven fork of the original Google AI Edge Gallery project.  
-All credit goes to Google and the original contributors for their excellent open-source work.
-
-Google branding, logos, and references have been completely removed and replaced.
+Box is an independent community fork of [Google AI Edge Gallery](https://github.com/google-ai-edge/gallery) and is not affiliated with or endorsed by Google LLC. Google branding has been replaced throughout. All credit for the underlying platform goes to Google and the original contributors — this fork simply builds on top of their work.
 
 > **Repository:** [github.com/jegly/box](https://github.com/jegly/box)
 
@@ -48,11 +39,11 @@ This project (`Box`) forks Google's AI Edge Gallery to create a **hybrid LiteRT 
 
 ## What is Box?
 
-Box is an Android app for running AI entirely on-device — chat, image generation, speech-to-text, document analysis, and vision, all without a network connection. It inherits the full feature set of the upstream Google AI Edge Gallery and layers on top: encrypted conversations, biometric lock, hard offline mode, and three additional native inference engines (llama.cpp, stable-diffusion.cpp, whisper.cpp) alongside LiteRT.
+Box is an Android app for running AI entirely on-device — chat, voice mode, image generation, speech-to-text, document analysis, and vision, all without a network connection. It inherits the full feature set of the upstream Google AI Edge Gallery and layers on top: encrypted conversations, biometric lock, hard offline mode, and three additional native inference engines (llama.cpp, stable-diffusion.cpp, whisper.cpp) alongside LiteRT.
 
 # Box: On-Device AI. No Cloud. No Compromise.
 
-**What makes Box unique?** While other on-device AI apps focus on a single capability, Box ships four inference engines in one APK — text, image generation, speech-to-text, and vision — all running locally with no data leaving your device.
+**What makes Box unique?** You can sit at your desk, tap two buttons, and have a real flowing voice conversation with an AI — no wake word, no account, no server, no subscription. It listens, thinks, and speaks back sentence by sentence before it's even finished generating. Point the camera at something and ask about it out loud. The AI sees it and answers. All of it runs on the phone in your hand, completely offline, faster than you'd expect.
 
 ---
 
@@ -93,50 +84,32 @@ Box is an Android app for running AI entirely on-device — chat, image generati
 
 ---
 
-## Why This Matters
+## What Box adds on top of upstream
 
-| Feature | Google AI Edge Gallery | llama.cpp-only apps | **Box** |
-|---------|----------------------|--------------------------------|------------------------|
-| LiteRT + GPU acceleration | ✅ | ❌ | ✅ |
-| Snapdragon NPU (8 Gen 2/3/Elite) | APK per SoC | ❌ | ✅ bundled |
-| Google Tensor TPU (Pixel 8–10) | APK per device | ❌ | ✅ bundled |
-| MediaTek NPU | APK per device | ❌ | ✅ bundled |
-| Import any GGUF model | ❌ | ✅ | ✅ |
-| On-device image generation | ❌ | ❌ | ✅ |
-| On-device speech-to-text | ❌ | ❌ | ✅ |
-| Document analysis in chat | ❌ | ❌ | ✅ |
-| Vision + audio in main chat | ❌ | ❌ | ✅ |
-| Encrypted chat history | ❌ | ❌ | ✅ |
-| Biometric app lock | ❌ | ❌ | ✅ |
-| Hard offline mode (airgap) | ❌ | ❌ | ✅ |
+Box is a fork of [Google AI Edge Gallery](https://github.com/google-ai-edge/gallery). The upstream project is excellent — Box just layers on additional capabilities:
 
----
-
-## What's Different from Upstream
-
-| Area | Upstream (Google AI Edge Gallery) | Box |
-|---|---|---|
-| Chat history | In-memory only | Persisted to SQLCipher-encrypted Room DB |
-| App lock | None | Optional biometric lock on every foreground |
-| Offline mode | Always online | Hard offline switch |
-| Inference engine | LiteRT only | LiteRT + llama.cpp + stable-diffusion.cpp + whisper.cpp |
-| Model import | Download from allowlist | Import local GGUF files |
-| Image generation | None | On-device Stable Diffusion via GGUF |
-| Speech-to-text | None | On-device Whisper STT |
-| Document analysis | None | Attach and analyse text files in chat |
-| Vision in main chat | Separate tab only | Enabled in AI Chat for multimodal models |
-| Audio in main chat | Separate tab only | Enabled in AI Chat for multimodal models |
-| NPU / TPU support | Separate APK per SoC | All SoC variants bundled in one APK |
-| Accelerator | Per-model default | User-selectable CPU / GPU / NPU |
-| Security audit log | None | On-device log of security-relevant events |
-| Chat resume | None | Conversations resume where you left off |
+| Area | What Box adds |
+|---|---|
+| Inference engines | llama.cpp (GGUF LLMs), stable-diffusion.cpp (image gen), whisper.cpp (STT) alongside LiteRT |
+| Model import | Import any local GGUF file — not limited to the curated download list |
+| NPU / TPU | All Snapdragon / Tensor / MediaTek variants bundled in one APK (upstream ships per-SoC) |
+| Voice mode | Free talk (continuous hands-free loop) and Vision talk (live camera + voice) |
+| Image generation | On-device Stable Diffusion via GGUF |
+| Speech-to-text | On-device Whisper STT |
+| Document analysis | Attach text files directly in chat |
+| Chat history | Persisted to a SQLCipher-encrypted Room database, resumable across sessions |
+| Security | Biometric app lock, hard offline mode, prompt sanitisation, audit log |
+| Agent skills | 20 built-in skills (upstream has 9) |
+| Math rendering | LaTeX expressions rendered as Unicode in chat |
 
 ---
 
 ## Core Features
 
 ### Local Chat
-Multi-turn conversations with on-device LLMs. Import any GGUF model or download LiteRT models from the built-in list. Supports Thinking Mode on compatible models. Full markdown rendering. Conversations are persisted and resumable.
+Multi-turn conversations with on-device LLMs. Import any GGUF model or download LiteRT models from the built-in list. Supports Thinking Mode on compatible models. Full markdown rendering with LaTeX math support — Greek letters, operators, fractions, and notation are rendered as Unicode symbols. Conversations are persisted and resumable.
+
+> **Recommended models:** We highly recommend **Gemma 4 E2B** or **Gemma 4 E4B** (LiteRT) as your primary models — best-tested, support vision, voice, and documents, and run efficiently with GPU/NPU acceleration. Available to download directly in the app.
 
 With **Gemma 4 E2B / E4B** selected, the chat input expands to a full multimodal interface:
 - 📎 Attach documents (`.txt`, `.md`, `.csv`, `.json`, `.py`, `.kt`, and more) — content is injected into context automatically
@@ -148,6 +121,48 @@ On-device image generation powered by [stable-diffusion.cpp](https://github.com/
 
 ### Voice Input
 On-device speech-to-text using [whisper.cpp](https://github.com/ggerganov/whisper.cpp). Tap to record, tap to transcribe. Copy or clear results. Supports Whisper Tiny through Small models in multiple languages. Audio never leaves the device.
+
+### Free Talk — Real-Time Voice Conversation
+
+Tap the mic and the speaker. That's it. Box listens to you, sends your words to the AI, and speaks the reply back — then immediately starts listening again. No tapping between turns. No waiting for a full response before it starts speaking. Just sit there and talk to it like a person.
+
+On Gemma 4 E2B it keeps up in real time. The first sentence of the reply is already being spoken while the model is still generating the rest.
+
+- *"Explain quantum entanglement like I'm five"* → speaks the answer, listens for your follow-up
+- *"Actually, go deeper on that last point"* → multi-turn, completely hands-free  
+- *"Help me think through a problem I'm having at work"* → back and forth, no typing ever
+- *"What should I cook for dinner tonight? I've got chicken and not much else"* → practical daily use
+
+It feels like having an AI sitting across from you. Entirely offline. Nothing leaves the device.
+
+Three toggles in AI Chat control it:
+- **🎤 Mic** — tap once to enter free talk mode, tap again to stop
+- **🔊 Speaker** — AI replies spoken aloud, sentence by sentence as they generate
+- **📹 Camera** — live vision mode (see below)
+
+Enable **Real-time voice reply** in Settings for sentence-by-sentence speech as the model generates. Works out of the box with Android's built-in speech and TTS — load a Whisper or Piper model for higher quality.
+
+> **De-Googled ROMs (GrapheneOS, CalyxOS, LineageOS without GApps):** Google TTS is not pre-installed on these devices. Install a TTS engine from F-Droid (e.g. [RHVoice](https://f-droid.org/packages/com.github.olga_yakovleva.rhvoice.android/) or [eSpeak NG](https://f-droid.org/packages/com.reecedunn.espeak/)) and set it as your default in **Android Settings → Accessibility → Text-to-speech**. The app will use it automatically.
+
+---
+
+### Vision Talk — Live Camera + Voice AI
+
+Tap the camera toggle to stream your back camera directly to the AI. Point it at anything and ask — the AI sees the current frame alongside your question and speaks its answer back. All offline, no cloud.
+
+**Things you can do:**
+
+- Point at a plant → *"What species is this and how do I care for it?"*
+- Point at food in your fridge → *"What can I cook with what's here?"*
+- Point at a label or sign in another language → *"What does this say?"*
+- Point at a circuit board → *"What component is this and what does it do?"*
+- Point at your code on a laptop screen → *"What's wrong with this function?"*
+- Point at a meal → *"Roughly how many calories is this?"*
+- Point at a maths problem → *"Walk me through how to solve this"*
+
+Combine with mic + speaker for a fully hands-free vision conversation — speak your question, AI sees the scene, speaks the answer, listens for the next question. Requires a vision-capable model (Gemma 4 E2B or E4B).
+
+When mic is off, camera mode sends a frame every 3 seconds automatically with "What do you see?" — useful for passive scene description.
 
 ### Vision AI
 Ask questions about images using on-device vision models. Powered by LiteRT with Gemma 4 E2B / E4B — GPU-accelerated, up to 32K context.
@@ -235,9 +250,21 @@ Open `Android/` in Android Studio (Ladybug or newer) and run on a physical devic
 
 ---
 
-## Upstream
+## Acknowledgements
 
-This project is a fork of [google-ai-edge/gallery](https://github.com/google-ai-edge/gallery). Upstream improvements are periodically merged.
+Box would not exist without the work of the teams and individuals behind the projects it builds on.
+
+**[Google AI Edge Gallery](https://github.com/google-ai-edge/gallery)** — the upstream project this fork is based on. The Google AI Edge team built an exceptionally well-structured, open-source Android app and made it available under the Apache 2.0 licence. Everything in Box starts from their foundation. Upstream changes are periodically merged and any improvements we make that are appropriate to contribute back will be.
+
+**[llama.cpp](https://github.com/ggerganov/llama.cpp)** — Georgi Gerganov and the llama.cpp contributors for making high-performance on-device LLM inference accessible to everyone.
+
+**[stable-diffusion.cpp](https://github.com/leejet/stable-diffusion.cpp)** — leejet and contributors for the C++ Stable Diffusion implementation that powers on-device image generation.
+
+**[whisper.cpp](https://github.com/ggerganov/whisper.cpp)** — Georgi Gerganov and contributors for the Whisper speech-to-text port.
+
+**[LiteRT / TensorFlow Lite](https://ai.google.dev/edge/litert)** — the Google teams behind LiteRT (formerly TFLite) and the NPU/GPU delegate infrastructure.
+
+Thank you to everyone who has opened issues, tested builds, or contributed to any of these projects. On-device AI is a community effort.
 
 ---
 

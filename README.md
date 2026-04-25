@@ -264,6 +264,8 @@ Box would not exist without the work of the teams and individuals behind the pro
 
 **[LiteRT / TensorFlow Lite](https://ai.google.dev/edge/litert)** — the Google teams behind LiteRT (formerly TFLite) and the NPU/GPU delegate infrastructure.
 
+
+
 Thank you to everyone who has opened issues, tested builds, or contributed to any of these projects. On-device AI is a community effort.
 
 ---

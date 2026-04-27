@@ -12,7 +12,7 @@ import java.util.Locale
 /**
  * Box: Encrypted local audit log for security events.
  * Logs biometric auth attempts, security violations, etc.
- * No network — everything stays on device.
+ * No network — everything stays on device. meow
  */
 object SecurityAuditLog {
 

@@ -32,6 +32,34 @@ If this project helped you, please ⭐️ star it to help others find it
 
 > **Note:** If you're using a custom ROM (LineageOS, GrapheneOS, CalyxOS), please use the [custom-rom-support-v1.0.4 release](https://github.com/jegly/Box/releases/tag/custom-rom-support-v1.0.4) instead.
 
+## Installation via Obtainium                                                                                                                                                                                                               
+                                                                                                                                                                                                                                              
+  Obtainium lets you install and auto-update Box directly from GitHub releases.                                                                                                                                                               
+   
+  [![Get Box (Main) on Obtainium](https://img.shields.io/badge/Obtainium-Box%20Main-blue?style=for-the-badge&logo=github)](https://obtainium.imranr.dev/redirect?r=obtainium://app/https://github.com/jegly/Box)                              
+                  
+  [![Get Box (Custom ROM) on Obtainium](https://img.shields.io/badge/Obtainium-Box%20Custom%20ROM-green?style=for-the-badge&logo=github)](https://obtainium.imranr.dev/redirect?r=obtainium://app/https://github.com/jegly/Box)               
+                  
+  ### Which version should I install?                                                                                                                                                                                                         
+                  
+  | Version | For |
+  |---|---|
+  | **Main** | Stock Android (Pixel, Samsung, etc.) |
+  | **Custom ROM** | GrapheneOS, LineageOS, CalyxOS — no Google services |
+                                                                                                                                                                                                                                              
+  ### Setup steps
+                                                                                                                                                                                                                                              
+  1. Tap the badge for your version above — this opens Obtainium with the repo pre-filled
+  2. Under **APK filter regex**, enter one of the following:
+     - Main: `Main`
+     - Custom ROM: `custom-rom-support`
+  3. Tap **Add** — Obtainium will find the latest release and install it                                                                                                                                                                      
+  4. Future updates will be detected automatically
+                                                                                                                                                                                                                                              
+  > **Note:** The version number shown inside the app (1.0.12) reflects the
+  > upstream Google AI Edge Gallery build number and is unrelated to the Box
+  > release version. Box releases are tracked via GitHub tags (v1.0.4 etc).   
+
 **Box is a security-hardened fork of [Google AI Edge Gallery](https://github.com/google-ai-edge/gallery) — with on-device image generation, voice mode (speech-to-speech AI chat), voice input, document analysis, vision AI, biometric lock, encrypted chat history, llama.cpp support, and GGUF model import.**
 
 

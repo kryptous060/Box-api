@@ -1,7 +1,7 @@
 <img src="https://raw.githubusercontent.com/jegly/Box/main/images/box-header3.png" alt="Box Header" width="800" />
 
 [![Kotlin](https://img.shields.io/badge/Kotlin-90.4%25-6272A4.svg?logo=kotlin&logoColor=white)](https://kotlinlang.org)
-[![Android](https://img.shields.io/badge/Android-16%2B-50FA7B.svg?logo=android&logoColor=white)](https://developer.android.com)
+[![Android](https://img.shields.io/badge/Android-15%2B-50FA7B.svg?logo=android&logoColor=white)](https://developer.android.com)
 [![Version](https://img.shields.io/badge/UpstreamVersion-1.0.12-BD93F9.svg)](https://github.com/jegly/Box/releases)
 [![License](https://img.shields.io/badge/License-Apache%202.0-8BE9FD.svg)](LICENSE)
 [![llama.cpp](https://img.shields.io/badge/llama.cpp-GGUF-FFB86C.svg)](https://github.com/ggerganov/llama.cpp)
@@ -87,20 +87,7 @@ Box is an Android app for running AI entirely on-device — chat, voice mode, im
 **What makes Box unique?** You can sit at your desk, tap two buttons, and have a real flowing voice conversation with an AI — no wake word, no account, no server, no subscription. It listens, thinks, and speaks back sentence by sentence before it's even finished generating. Point the camera at something and ask about it out loud. The AI sees it and answers. All of it runs on the phone in your hand, completely offline, faster than you'd expect. 
 
 
-**I have now created a separate branch called custom-rom-support, along with a corresponding release section specifically for users on third-party operating systems.
-If you are using a custom ROM, please use the custom-rom-support
- branch/release instead of the main branch. This branch supports TPU/NPU
- acceleration on Tensor devices; however, Snapdragon acceleration 
-remains untested.
-Please expect broken features if you are using a custom ROM and running the current release or branch from main. A separate APK and branch (custom-rom-support)
- are now available for users on third-party Android operating systems, 
-including but not limited to LineageOS, GrapheneOS, and CalyxOS.
-Note:
- The primary reason for these limitations is that third-party operating 
-systems typically lack AICore and system-level Text-to-Speech (TTS) 
-components. As a result, features such as voice-to-voice mode and 
-NPU/GPU acceleration are either unavailable or significantly impaired on
- these ROMs.**
+> **Custom ROM users (GrapheneOS, LineageOS, CalyxOS):** Use the **custom-rom-support** APK, not Main. Third-party ROMs lack AICore and system TTS, which impairs voice mode and NPU acceleration on the Main build. The custom-rom-support branch works around these limitations with built-in Piper TTS and alternative voice input. TPU/NPU acceleration is supported on Tensor devices; Snapdragon NPU remains untested on custom ROMs.
 
 ---
 
@@ -199,7 +186,7 @@ Three toggles in AI Chat control it:
 
 Enable **Real-time voice reply** in Settings for sentence-by-sentence speech as the model generates. Works out of the box with Android's built-in speech and TTS — load a Whisper or Piper model for higher quality.
 
-> **De-Googled ROMs (GrapheneOS, CalyxOS, LineageOS without GApps):** Google TTS is not pre-installed on these devices. Install a TTS engine from F-Droid (e.g. [RHVoice](https://f-droid.org/packages/com.github.olga_yakovleva.rhvoice.android/) or [eSpeak NG](https://f-droid.org/packages/com.reecedunn.espeak/)) and set it as your default in **Android Settings → Accessibility → Text-to-speech**. The app will use it automatically.
+> **De-Googled ROMs (GrapheneOS, CalyxOS, LineageOS without GApps):** Use the **custom-rom-support** APK — it includes Piper TTS (Amy) as a built-in download in the Voice tab, so no third-party TTS app is needed. If you're on the Main build, install a TTS engine from F-Droid (e.g. [RHVoice](https://f-droid.org/packages/com.github.olga_yakovleva.rhvoice.android/) or [eSpeak NG](https://f-droid.org/packages/com.reecedunn.espeak/)) and set it as default in **Android Settings → Accessibility → Text-to-speech**.
 
 ---
 
@@ -231,7 +218,9 @@ Enable an optional biometric lock from Settings. The app re-locks automatically 
 All conversations are stored in a SQLCipher-encrypted Room database. History persists across sessions and is resumable from the Chat History screen. Swipe to delete individual conversations, or wipe all at once.
 
 ### NPU / TPU Acceleration
-All Qualcomm Hexagon NPU variants (Snapdragon 8 Gen 2 / 8 Gen 3 / 8 Elite / newer), Google Tensor TPU (Pixel 8–10), and MediaTek NPU are bundled in a single APK — no separate builds per device. Select **NPU/TPU** in the model's accelerator dropdown; Box auto-detects the chip and loads the right runtime. Uses LiteRT JIT compilation on-device, so no pre-compiled model files are needed.
+All Qualcomm Hexagon NPU variants (Snapdragon 8 Gen 2 / 8 Gen 3 / 8 Elite / newer), Google Tensor TPU (Pixel 8–10), and MediaTek NPU are bundled in a single APK — no separate builds per device. Select **NPU/TPU** in the model's accelerator dropdown; Box auto-detects the chip and loads the right runtime.
+
+> **Note:** NPU acceleration currently falls back to GPU/CPU for most models. The NPU path (via AICore on Tensor, QNN on Snapdragon) requires model-side AUX metadata that current litert-community models don't yet include. GPU is the recommended accelerator and performs excellently on all supported chips.
 
 Supported hardware:
 - **Snapdragon 8 Gen 2** (SM8550, Hexagon V69)
@@ -254,7 +243,7 @@ A toggle in Settings forces the app into a fully airgapped state — all downloa
 
 ### Requirements
 
-- Android 16+
+- Android 15+
 - ~4 GB of free storage for a typical quantised LLM
 
 ### Build from source
@@ -303,6 +292,7 @@ Open `Android/` in Android Studio (Ladybug or newer) and run on a physical devic
 - **llama.cpp** — GGUF LLM inference (git submodule)
 - **stable-diffusion.cpp** — GGUF image generation (git submodule)
 - **whisper.cpp** — on-device speech-to-text (git submodule)
+- **Sherpa-ONNX (k2-fsa)** — Piper TTS engine for on-device voice synthesis (custom-rom-support branch)
 - **Firebase Analytics** — anonymous usage stats (disabled in Offline Mode)
 
 ---
@@ -320,6 +310,8 @@ Box would not exist without the work of the teams and individuals behind the pro
 **[whisper.cpp](https://github.com/ggerganov/whisper.cpp)** — Georgi Gerganov and contributors for the Whisper speech-to-text port.
 
 **[LiteRT / TensorFlow Lite](https://ai.google.dev/edge/litert)** — the Google teams behind LiteRT (formerly TFLite) and the NPU/GPU delegate infrastructure.
+
+**[Sherpa-ONNX / k2-fsa](https://github.com/k2-fsa/sherpa-onnx)** — the k2-fsa team for Sherpa-ONNX, which powers the Piper TTS engine (Amy and other voices) in the custom-rom-support branch.
 
 **[off-grid-mobile-ai](https://github.com/alichherawalla/off-grid-mobile-ai)** — Mohammed Ali Chherawalla for the on-device Stable Diffusion Android implementation, which was instrumental in getting efficient on-device image generation working and influenced parts of Box’s pipeline.
 

@@ -31,20 +31,21 @@ If this project helped you, please ⭐️ star it to help others find it
 > **Note:** If you're using a custom ROM (LineageOS, GrapheneOS, CalyxOS), download the `custom-rom-support` APK from the [latest release](https://github.com/jegly/Box/releases/latest) instead.
 
 ## Installation via Obtainium                                                                                                                                                                                                               
-                                                                                                                                                                                                                                              
-  Obtainium lets you install and auto-update Box directly from GitHub releases.                                                                                                                                                               
-     [![Box Main — Obtainium](https://img.shields.io/badge/Obtainium-Box%20Main-ff8f00?style=for-the-badge&logo=github&logoColor=ff8f00&labelColor=1a0d00)](https://obtainium.imranr.dev/redirect?r=obtainium://app/https://github.com/jegly/Box)
-  [![Box Custom ROM —                                                                                                                                                                                                                         
-  Obtainium](https://img.shields.io/badge/Obtainium-Box%20Custom%20ROM-ff8f00?style=for-the-badge&logo=github&logoColor=ff8f00&labelColor=1a0d00)](https://obtainium.imranr.dev/redirect?r=obtainium://app/https://github.com/jegly/Box)   
-           
-                  
+ ### Install via Obtainium
+
+[![Obtainium - Main](https://img.shields.io/badge/Obtainium-Main-brightgreen)](obtainium://app/%7B%22id%22%3A%22com.box.gallery%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fjegly%2FBox%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22Main%5C%22%2C%5C%22useVersionCodeAsOSVersion%5C%22%3Atrue%7D%22%7D)
+
+[![Obtainium - Custom ROM](https://img.shields.io/badge/Obtainium-Custom%20ROM-brightgreen)](obtainium://app/%7B%22id%22%3A%22com.box.gallery%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fjegly%2FBox%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22custom-rom-support%5C%22%2C%5C%22useVersionCodeAsOSVersion%5C%22%3Atrue%7D%22%7D)
+
+         
   ### Which version should I install?                                                                                                                                                                                                         
                   
   | Version | For |
   |---|---|
   | **Main** | Stock Android (Pixel, Samsung, etc.) |
   | **Custom ROM** | GrapheneOS, LineageOS, CalyxOS — no Google services |
-                                                                                                                                                                                                                                              
+      
+- The in-app updater is also available in Settings                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
   ### Setup steps
                                                                                                                                                                                                                                               
   1. Tap the badge for your version above — this opens Obtainium with the repo pre-filled

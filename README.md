@@ -73,7 +73,7 @@ If this project helped you, please ⭐️ star it to help others find it
 Box is an independent community fork of [Google AI Edge Gallery](https://github.com/google-ai-edge/gallery) and is not affiliated with or endorsed by Google LLC. Google branding has been replaced throughout. All credit for the underlying platform goes to Google and the original contributors — this fork simply builds on top of their work.
 
 
-## What's new in v1.0.7 – v1.0.10
+## What's new in v1.0.7 – v1.0.10   - MCP is coming in v1.0.11 !
 
 | Version | Feature | Details |
 |---|---|---|

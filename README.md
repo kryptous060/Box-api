@@ -410,4 +410,12 @@ Licensed under the Apache License, Version 2.0
 - [Qualcomm QAIRT SDK](https://softwarecenter.qualcomm.com)
 - [Hugging Face LiteRT Community](https://huggingface.co/litert-community)
 
-main - sha256:d6406193d0857cc60d99d169738058cb99c40ed84bf4adc82733480bc5ad0f49
+---
+
+  ## Checksums
+
+  | Variant | SHA-256 |
+  |---|---|
+  | main | `d6406193d0857cc60d99d169738058cb99c40ed84bf4adc82733480bc5ad0f49` |
+  | custom-rom-support | `...` |
+

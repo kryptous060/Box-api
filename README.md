@@ -119,12 +119,7 @@ Box is an independent community fork of [Google AI Edge Gallery](https://github.
 
 ## Related
 
-Built [OfflineLLM](https://github.com/jegly/OfflineLLM) first — a privacy-first Android chat app with a [llama.cpp](https://github.com/ggerganov/llama.cpp) backend.
-
-This project (`Box`) forks Google's AI Edge Gallery to create a **hybrid LiteRT / llama.cpp** feature rich hybrid experience. 
-
-→ Try the [OfflineLLM app](https://github.com/jegly/OfflineLLM) for pure llama.cpp on-device chat.
-
+Built [OfflineLLM](https://github.com/jegly/OfflineLLM) first — a privacy-first Android chat app.
 ---
 
 ## What is Box?  

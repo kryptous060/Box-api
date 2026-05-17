@@ -306,6 +306,7 @@ A toggle in Settings forces the app into a fully airgapped state — all downloa
 
 - Android 15+
 - ~4 GB of free storage for a typical quantised LLM
+- `6 GB of Ram
 
 ### Build from source
 
@@ -315,13 +316,13 @@ cd box/Android
 ./gradlew :app:assembleDebug
 ```
 
-The `--recurse-submodules` flag is required to pull llama.cpp, stable-diffusion.cpp, and whisper.cpp submodules. The first build compiles all three native libraries from source — expect 15–25 minutes. Subsequent builds are fast.
+The `--recurse-submodules` flag is required to pull llama.cpp, stable-diffusion.cpp, and whisper.cpp submodules. The first build compiles all three native libraries from source — expect 15–25 minutes. 
 
-Open `Android/` in Android Studio (Ladybug or newer) and run on a physical device for best performance.
+Open `Android/` in Android Studio and run on a physical device for best performance.
 
-### Loading a GGUF model ( Use LiteRT for speed & performance ) 
+### Loading a LiteRT/GGUF model 
 
-1. Copy a `.gguf` file to your device (Downloads, USB, etc.)
+1. Copy a `.litertlm/GGUF` file to your device (Downloads, USB, etc.)
 2. Open the app → **Model Manager** in the drawer
 3. Tap **Import** and pick your file
 4. Set a display name and choose CPU / GPU / NPU

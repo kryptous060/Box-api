@@ -154,7 +154,6 @@ Box is an Android app for running AI entirely on-device — chat, voice mode, im
   </tr>
   <tr>
     <td align="center"><img src="images/Box_Screenshots/Whisper.png" width="230"/><br/><sub>Whisper STT</sub></td>
-    <td align="center"><img src="images/Box_Screenshots/LiteRT_backend_Voice.png" width="230"/><br/><sub>LiteRT Voice Backend</sub></td>
     <td align="center"><img src="images/Box_Screenshots/Voice_overview.png" width="230"/><br/><sub>Voice Mode</sub></td>
   </tr>
   <tr>

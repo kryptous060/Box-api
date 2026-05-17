@@ -144,29 +144,29 @@ Box is an Android app for running AI entirely on-device — chat, voice mode, im
 
 <table>
   <tr>
-    <td align="center"><img src="images/Box_Screenshots/Homescreen_overview.png" width="280"/><br/><sub>Home Overview</sub></td>
-    <td align="center"><img src="images/Box_Screenshots/AI_Chat_Example.png" width="280"/><br/><sub>AI Chat</sub></td>
-    <td align="center"><img src="images/Box_Screenshots/Chat_overview.png" width="280"/><br/><sub>Chat Overview</sub></td>
+    <td align="center"><img src="images/Box_Screenshots/Homescreen_overview.png" width="300"/><br/><sub>Home Overview</sub></td>
+    <td align="center"><img src="images/Box_Screenshots/AI_Chat_Example.png" width="300"/><br/><sub>AI Chat</sub></td>
+    <td align="center"><img src="images/Box_Screenshots/Chat_overview.png" width="300"/><br/><sub>Chat Overview</sub></td>
   </tr>
   <tr>
-    <td align="center"><img src="images/Box_Screenshots/Ask_Image.png" width="280"/><br/><sub>Vision AI</sub></td>
-    <td align="center"><img src="images/Box_Screenshots/VoiceInput.png" width="280"/><br/><sub>Voice Input</sub></td>
-    <td align="center"><img src="images/Box_Screenshots/Audio_Scribe.png" width="280"/><br/><sub>Audio Scribe</sub></td>
+    <td align="center"><img src="images/Box_Screenshots/Ask_Image.png" width="300"/><br/><sub>Vision AI</sub></td>
+    <td align="center"><img src="images/Box_Screenshots/VoiceInput.png" width="300"/><br/><sub>Voice Input</sub></td>
+    <td align="center"><img src="images/Box_Screenshots/Audio_Scribe.png" width="300"/><br/><sub>Audio Scribe</sub></td>
   </tr>
   <tr>
-    <td align="center"><img src="images/Box_Screenshots/Whisper.png" width="280"/><br/><sub>Whisper STT</sub></td>
-    <td align="center"><img src="images/Box_Screenshots/Voice_overview.png" width="280"/><br/><sub>Voice Mode</sub></td>
-    <td align="center"><img src="images/Box_Screenshots/ImgGen_Overview.png" width="280"/><br/><sub>Image Generation</sub></td>
+    <td align="center"><img src="images/Box_Screenshots/Whisper.png" width="300"/><br/><sub>Whisper STT</sub></td>
+    <td align="center"><img src="images/Box_Screenshots/Voice_overview.png" width="300"/><br/><sub>Voice Mode</sub></td>
+    <td align="center"><img src="images/Box_Screenshots/ImgGen_Overview.png" width="300"/><br/><sub>Image Generation</sub></td>
   </tr>
   <tr>
-    <td align="center"><img src="images/Box_Screenshots/Agent_Skills.png" width="280"/><br/><sub>Agent Skills</sub></td>
-    <td align="center"><img src="images/Box_Screenshots/Prompt_Lab.png" width="280"/><br/><sub>Prompt Lab</sub></td>
-    <td align="center"><img src="images/Box_Screenshots/Model_Configuration.png" width="280"/><br/><sub>Model Config</sub></td>
+    <td align="center"><img src="images/Box_Screenshots/Agent_Skills.png" width="300"/><br/><sub>Agent Skills</sub></td>
+    <td align="center"><img src="images/Box_Screenshots/Prompt_Lab.png" width="300"/><br/><sub>Prompt Lab</sub></td>
+    <td align="center"><img src="images/Box_Screenshots/Model_Configuration.png" width="300"/><br/><sub>Model Config</sub></td>
   </tr>
   <tr>
-    <td align="center"><img src="images/Box_Screenshots/Model_Select.png" width="280"/><br/><sub>Model Select</sub></td>
-    <td align="center"><img src="images/Box_Screenshots/Settings.png" width="280"/><br/><sub>Settings</sub></td>
-    <td align="center"><img src="images/Box_Screenshots/Nano_overview.png" width="280"/><br/><sub>Gemini Nano</sub></td>
+    <td align="center"><img src="images/Box_Screenshots/Model_Select.png" width="300"/><br/><sub>Model Select</sub></td>
+    <td align="center"><img src="images/Box_Screenshots/Settings.png" width="300"/><br/><sub>Settings</sub></td>
+    <td align="center"><img src="images/Box_Screenshots/Nano_overview.png" width="300"/><br/><sub>Gemini Nano</sub></td>
   </tr>
 </table>
 

@@ -150,9 +150,9 @@ Box is an Android app for running AI entirely on-device — chat, voice mode, im
 
 <table>
   <tr>
-    <td align="center"><img src="images/Box_Screenshots/Homescreen_overview.png" width="300"/><br/><sub>Home Overview</sub></td>
-    <td align="center"><img src="images/Box_Screenshots/AI_Chat_Example.png" width="300"/><br/><sub>AI Chat</sub></td>
-    <td align="center"><img src="images/Box_Screenshots/Chat_overview.png" width="300"/><br/><sub>Chat Overview</sub></td>
+    <td align="center"><img src="images/Box_Screenshots/Homescreen_overview.png" width="400"/><br/><sub>Home Overview</sub></td>
+    <td align="center"><img src="images/Box_Screenshots/AI_Chat_Example.png" width="400"/><br/><sub>AI Chat</sub></td>
+    <td align="center"><img src="images/Box_Screenshots/Chat_overview.png" width="400"/><br/><sub>Chat Overview</sub></td>
   </tr>
   <tr>
     <td align="center"><img src="images/Box_Screenshots/Ask_Image.png" width="300"/><br/><sub>Vision AI</sub></td>

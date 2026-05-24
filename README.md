@@ -30,7 +30,7 @@
 If this project helped you, please ⭐️ star it to help others find it. 
 ## 📱 Download
 
-[![Download Box v1.0.10 APK](https://img.shields.io/badge/Download-Latest_APK-A6E3A1?style=for-the-badge&logo=android&logoColor=1E1E2E)](https://github.com/jegly/Box/releases/latest)
+[![Download Box v1.0.11 APK](https://img.shields.io/badge/Download-Latest_APK-A6E3A1?style=for-the-badge&logo=android&logoColor=1E1E2E)](https://github.com/jegly/Box/releases/latest)
 
 > **Note:** If you're using a custom ROM (LineageOS, GrapheneOS, CalyxOS), download the `custom-rom-support` APK from the [latest release](https://github.com/jegly/Box/releases/latest) instead.
 
@@ -64,9 +64,9 @@ If this project helped you, please ⭐️ star it to help others find it.
   3. Tap **Add** — Obtainium will find the latest release and install it                                                                                                                                                                      
   4. Future updates will be detected automatically
                                                                                                                                                                                                                                               
-  > **Note:** The version number shown inside the app (1.0.13) reflects the
+  > **Note:** The version number shown inside the app (1.0.15) reflects the
   > upstream Google AI Edge Gallery build number and is unrelated to the Box
-  > release version. Box releases are tracked via GitHub tags (v1.0.5 etc).
+  > release version. Box releases are tracked via GitHub tags (v1.0.11 etc).
   > Use **Settings → Check for updates** to see if a newer Box release is available.
 
 **Box is a security-hardened fork of [Google AI Edge Gallery](https://github.com/google-ai-edge/gallery) — with on-device image generation, voice mode (speech-to-speech AI chat), voice input, document analysis, vision AI, biometric lock, encrypted chat history, llama.cpp support, and GGUF model import.**
@@ -79,10 +79,21 @@ Box is an independent community fork of [Google AI Edge Gallery](https://github.
   
   
   
-## Changelog v1.0.7 – v1.0.10   
+## Changelog v1.0.7 – v1.0.11
 
 | Version | Feature | Details |
 |---|---|---|
+| v1.0.11 | **MCP server support** | The Agent tab can now connect to external Model Context Protocol servers (e.g. `gitmcp.io/<owner>/<repo>`) and give the model access to remote tools. Off by default — enable in Settings, add a server URL, accept the disclaimer. Every tool call fires a per-call permission dialog (Allow once / Always allow / Deny). Hard Offline Mode disables MCP. |
+| v1.0.11 | **"Agent Skills" renamed to "Agent"** | Reflects the addition of MCP tools alongside the existing 20 built-in skills. Internal IDs unchanged. |
+| v1.0.11 | **Broader NPU init crash recovery (main)** | Snapdragon 8 Elite / Vivo OriginOS users (e.g. iQOO 13) reporting hard crashes on NPU model open now fall back silently to GPU instead. Any catchable NPU init exception is recovered, not just `TF_LITE_AUX`. |
+| v1.0.11 | **Pixel 8/9 TPU label** | Tensor G3 / G4 devices now show the TPU accelerator label alongside Pixel 10 (`isPixelDevice()` broadened from `isPixel10()`). |
+| v1.0.11 | **Smoother streaming render** | `BufferedFadingMarkdownText` two-layer crossfade reduces markdown re-render jank during token streaming. |
+| v1.0.11 | **Chat scroll performance** | `snapshotFlow` + `derivedStateOf` translated to Box's `LazyColumn`. Significantly fewer Compose recompositions per generated token. |
+| v1.0.11 | **ChatGPT-style chat layout** | User and assistant messages both left-aligned, restoring Box's original look. |
+| v1.0.11 | **Downloaded-model tick icon** | Once a model is on device, the model picker chip and Model Manager show a filled-circle tick instead of the download-arrow icon. |
+| v1.0.11 | **Gemma 4 model hashes refreshed** | Gemma 4 E2B / E4B / E2B-Snapdragon entries updated to upstream's latest commits (`6e5c4f1e…` / `28299f30…`). |
+| v1.0.11 | **R8 keep rule for tool calls** | Release builds preserve `@Tool` method names on every `ToolSet` subclass — MCP and Agent skills now work in release APKs (was silently broken). |
+| v1.0.11 | **Upstream merged to 1.0.15** | Internal `versionName` bumped to match upstream gallery 1.0.15 (cherry-picked over multiple sessions; chat history, model schema, and other heavily-customised Box paths preserved). |
 | v1.0.10 | **Gemini Nano hub** | 6 on-device ML Kit features powered by Gemini Nano on Pixel 9+ (via AICore, NPU/TPU-accelerated): Summarize, Proofread, Rewrite, Chat, Describe Image, and Speech-to-Text. First use triggers an automatic background download of Gemini Nano (~1–2 GB via AICore). |
 | v1.0.10 | **Nano Chat — multi-session** | Persistent multi-turn chat with Gemini Nano. Sessions are stored in the existing encrypted SQLCipher database, auto-titled from the first message, and fully resumable. Sessions can be renamed or deleted. Long-press any bubble to copy. |
 | v1.0.10 | **Document attachment in Nano** | Proofread and Rewrite now accept attached documents (PDF, TXT, MD) — content is read and passed to Gemini Nano as context. |
@@ -165,7 +176,7 @@ Box is an Android app for running AI entirely on-device — chat, voice mode, im
     <td align="center"><img src="images/Box_Screenshots/ImgGen_Overview.png" width="300"/><br/><sub>Image Generation</sub></td>
   </tr>
   <tr>
-    <td align="center"><img src="images/Box_Screenshots/Agent_Skills.png" width="300"/><br/><sub>Agent Skills</sub></td>
+    <td align="center"><img src="images/Box_Screenshots/Agent_Skills.png" width="300"/><br/><sub>Agent (Skills + MCP)</sub></td>
     <td align="center"><img src="images/Box_Screenshots/Prompt_Lab.png" width="300"/><br/><sub>Prompt Lab</sub></td>
     <td align="center"><img src="images/Box_Screenshots/Model_Configuration.png" width="300"/><br/><sub>Model Config</sub></td>
   </tr>
@@ -199,7 +210,7 @@ Box is a fork of [Google AI Edge Gallery](https://github.com/google-ai-edge/gall
 | Chat history | Persisted to a SQLCipher-encrypted Room database, resumable across sessions |
 | Security | Biometric app lock, hard offline mode, prompt sanitisation, audit log, tap jacking protection, accessibility data sensitivity |
 | Themes | Catppuccin (14 accents) and Dracula (7 accents) alongside Material You — three-way picker in Settings |
-| Agent skills | 20 built-in skills (upstream has 9) |
+| Agent (skills + MCP) | 20 built-in skills (upstream has 9) plus Model Context Protocol — connect to remote MCP servers and give the model real tools, with per-call permission prompts |
 | Math rendering | LaTeX expressions rendered as Unicode in chat, including inside markdown table cells |
 | App shortcut | Long-press icon → AI Chat for instant cold-start navigation |
 | In-app updates | Settings → Check for updates — compares against latest GitHub release, downloads correct variant |
@@ -281,11 +292,11 @@ All Qualcomm Hexagon NPU variants (Snapdragon 8 Gen 2 / 8 Gen 3 / 8 Elite / newe
 > **Note:** NPU acceleration currently falls back to GPU/CPU for most models. The NPU path (via AICore on Tensor, QNN on Snapdragon) requires model-side AUX metadata that current litert-community models don't yet include. GPU is the recommended accelerator and performs excellently on all supported chips.
 
 Supported hardware:
-- **Snapdragon 8 Gen 2** (SM8550, Hexagon V69)
-- **Snapdragon 8 Gen 3** (SM8650, Hexagon V73)
-- **Snapdragon 8 Elite** (SM8750, Hexagon V75)
-- **Snapdragon 8 Elite for Galaxy** (SM8850, Hexagon V79)
-- **Snapdragon next-gen** (Hexagon V81)
+- **Snapdragon 888 / 8 Gen 1** (Hexagon V69)
+- **Snapdragon 8 Gen 2** (SM8550, Hexagon V73)
+- **Snapdragon 8 Gen 3** (SM8650, Hexagon V75)
+- **Snapdragon 8 Elite** (SM8750, Hexagon V79)
+- **Snapdragon next-gen** (SM8850, Hexagon V81)
 - **Google Tensor G3 / G4 / G5** (Pixel 8 / 9 / 10)
 - **MediaTek Dimensity** (MT6989, MT6991)
 

@@ -79,7 +79,12 @@ Box is an independent community fork of [Google AI Edge Gallery](https://github.
   
   
   
+<details>
+<summary>
+
 ## Changelog v1.0.7 – v1.0.11
+
+</summary>
 
 | Version | Feature | Details |
 |---|---|---|
@@ -127,6 +132,8 @@ Box is an independent community fork of [Google AI Edge Gallery](https://github.
 | v1.0.7 | **In-app update checker** | Settings → Check for updates — fetches the latest GitHub release and offers a direct download link for your variant. |
 | v1.0.7 | **Model import from list** | Whisper and TTS models can now be imported directly from the model list. |
 
+</details>
+
 ---
 
 
@@ -156,7 +163,13 @@ Box is an Android app for running AI entirely on-device — chat, voice mode, im
 
 ---
 
+<details>
+<summary>
+
 ## Screenshots
+
+</summary>
+
 <div align="center">
 
 <table>
@@ -188,6 +201,8 @@ Box is an Android app for running AI entirely on-device — chat, voice mode, im
 </table>
 
 </div>
+
+</details>
 
 ---
 > [!NOTE]

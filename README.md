@@ -28,7 +28,7 @@
 ![GitHub all releases](https://img.shields.io/github/downloads/jegly/Box/total)                                                            
 
 If this project helped you, please ⭐️ star it to help others find it. 
-## 📱 Download
+##  Download
 
 [![Download Box v1.0.11 APK](https://img.shields.io/badge/Download-Latest_APK-A6E3A1?style=for-the-badge&logo=android&logoColor=1E1E2E)](https://github.com/jegly/Box/releases/latest)
 

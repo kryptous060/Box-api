@@ -468,7 +468,7 @@ Licensed under the Apache License, Version 2.0
   | Variant | SHA-256 |
   |---|---|
   | main | `9d38af7fd67e52dca1971f9edd4e769ab743eaca079667bba0740a4b577667e6` |
-  | custom-rom-support | `160eb2ed07997412ecfb29416fa79d2d6b708ef093544ac54526071e6509c04f` |
+  | custom-rom-support | `a21fde92779af3c3b55342df33290c420841d079faaf858d13c892f65dd04b3d` |
 
 ---
 

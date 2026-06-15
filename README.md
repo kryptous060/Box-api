@@ -33,7 +33,7 @@
 If this project helped you, please ⭐️ star it to help others find it. 
 ##  Download
 
-[![Download Box v2.0.2 APK](https://img.shields.io/badge/Download-Latest_APK-A6E3A1?style=for-the-badge&logo=android&logoColor=1E1E2E)](https://github.com/jegly/Box/releases/latest)
+[![Download Box v3.0.0 APK](https://img.shields.io/badge/Download-Latest_APK-A6E3A1?style=for-the-badge&logo=android&logoColor=1E1E2E)](https://github.com/jegly/Box/releases/latest)
 
 > **Note:** If you're using a custom ROM (LineageOS, GrapheneOS, CalyxOS), download the `custom-rom-support` APK from the [latest release](https://github.com/jegly/Box/releases/latest) instead.
 
@@ -86,12 +86,21 @@ Box is an independent community fork of [Google AI Edge Gallery](https://github.
 <details>
 <summary>
 
-## Changelog v1.0.7 – v2.0.2
+## Changelog v1.0.7 – v3.0.0
 
 </summary>
 
 | Version | Feature | Details |
 |---|---|---|
+| v3.0.0 | **Major UI overhaul — Material 3 Expressive** | A top-to-bottom interface refresh. The app now moves with spring-physics motion: home cards bounce in and respond to taps, chat messages rise and fade in as they arrive, and screen transitions use Material 3 slide-and-fade. The jump to 3.0.0 reflects how much of the UI changed — the models and engines are unchanged. |
+| v3.0.0 | **11 new themes** | A set of terminal-inspired palettes — Fairy Floss, Nord, Bim, Borland, C64, Cobalt Neon, Grass, Homebrew Ocean, Mono Amber, Mono Red, and Synthwave — selectable from a new dropdown in Settings, alongside the existing System, Light, Catppuccin, and Dracula themes. |
+| v3.0.0 | **Custom app & chat fonts** | Choose from 13 bundled font families (Nunito plus Cormorant Garamond, DotGothic16, IBM Plex Mono / Serif, Instrument Serif, Playfair Display, Press Start 2P, Quicksand, Space Grotesk, Turret Road, Viaoda Libre, and more), each previewed in its own typeface — with an optional separate font just for chat messages. |
+| v3.0.0 | **Text-size slider** | Scale text across the whole app and chat from 0.8× to 1.4×, on top of your system font size. |
+| v3.0.0 | **Themed app icon** | With "Themed icons" enabled in your launcher, the Box icon now tints to your system Material You colours. |
+| v3.0.0 | **Settings, reorganised** | The long settings list is now grouped into smooth, collapsible categories — Appearance, Privacy & Security, Network & Tools, Chat & Voice, and About. |
+| v3.0.0 | **Theme-aware task screens** | Open any task (Chat, Diffusion, Voice…) and the background now follows your selected theme with the same accent tint as the home screen — no more flat black behind a colourful theme. Cleaner, icon-free task headers, a tidy box-shaped menu button, and a new Material 3 **wavy** download-progress indicator. |
+| v3.0.0 | **Fix — NPU crash on Snapdragon & MediaTek (#82, #83)** | NPU models could hard-crash on load on non-Pixel devices (e.g. Galaxy S26 Ultra, Xiaomi 14T Pro) because the wrong hardware dispatch library was being loaded. Box now selects the correct Qualcomm / MediaTek runtime per device. The Pixel 10 / Tensor G5 path is unchanged and re-verified. |
+| v3.0.0 | **Fix — Settings flash & jank** | Changing the text-size slider no longer flashes the home screen behind Settings, and opening Settings or expanding a category no longer jumps — the dialog is now fixed-size and animates its contents internally. |
 | v2.0.2 | **New model tier — Gemma 3 270M** | Brand-new ultra-lightweight model (~460–555 MB) — fast and low-RAM, ideal for quick tasks on modest devices. Ships dedicated NPU builds for Snapdragon (SM8550 / 8650 / 8750 / 8750-AB / 8850) and MediaTek Dimensity (MT6991 / MT6993). |
 | v2.0.2 | **New models — Gemma 3 1B-IT with broad NPU coverage** | Gemma 3 1B now ships dedicated on-device NPU builds across Snapdragon (SM8550 → SM8850, incl. the Samsung SM8750-AB) and MediaTek Dimensity (MT6989 / 6991 / 6993), plus a universal GPU/CPU build. Each device automatically downloads the build that matches its chip. |
 | v2.0.2 | **New models — Gemma 3n E2B & E4B (multimodal)** | Text, image and audio input, up to 32K context, with Gemma 3n's selective-parameter architecture. Run on GPU/CPU on every device; NPU-accelerated on MediaTek (MT6993). |

@@ -109,9 +109,12 @@ dependencies {
   implementation(libs.hilt.android)
   implementation(libs.hilt.navigation.compose)
   implementation(libs.play.services.oss.licenses)
-  platform(libs.firebase.bom)
+  
+  // FIXED: Wrapped platform() call inside implementation()
+  implementation(platform(libs.firebase.bom))
   implementation(libs.firebase.analytics)
   implementation(libs.firebase.messaging)
+  
   implementation(libs.androidx.exifinterface)
   implementation(libs.moshi.kotlin)
 
@@ -157,9 +160,18 @@ dependencies {
   implementation(libs.mlkit.genai.prompt)
 }
 
+// FIXED: Replaced `plugins` with `builtins` for proper Kotlin DSL resolution
 protobuf {
   protoc { artifact = "com.google.protobuf:protoc:4.26.1" }
-  generateProtoTasks { all().forEach { it.plugins { create("java") { option("lite") } } } }
+  generateProtoTasks {
+    all().forEach { task ->
+      task.builtins {
+        create("java") {
+          option("lite")
+        }
+      }
+    }
+  }
 }
 
 // OSS Licenses plugin uses groovy.util.XmlSlurper which was moved to groovy-xml in Groovy 4.x

@@ -1,4 +1,4 @@
-package com.jegly.box-api // <-- Change this if your package name is different!
+package com.box.gallery
 
 import android.app.Service
 import android.content.Intent

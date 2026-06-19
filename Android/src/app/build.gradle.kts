@@ -72,6 +72,7 @@ extensions.configure<com.android.build.api.dsl.ApplicationExtension> {
       excludes.add("META-INF/io.netty.versions.properties")
     }
   }
+}
 
 dependencies {
   implementation(libs.androidx.core.ktx)
@@ -108,7 +109,7 @@ dependencies {
   implementation(libs.hilt.android)
   implementation(libs.hilt.navigation.compose)
   implementation(libs.play.services.oss.licenses)
-  implementation(platform(libs.firebase.bom))
+  platform(libs.firebase.bom)
   implementation(libs.firebase.analytics)
   implementation(libs.firebase.messaging)
   implementation(libs.androidx.exifinterface)

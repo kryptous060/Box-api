@@ -152,6 +152,10 @@
         <uses-native-library android:name="libvndksupport.so" android:required="false"/>
         <uses-native-library android:name="libOpenCL.so" android:required="false"/>
         <uses-native-library android:name="libcdsprpc.so" android:required="false" />
+     <service
+        android:name="com.box.gallery.BoxApiService"
+        android:enabled="true"
+        android:exported="false" />
     </application>
 
 </manifest>

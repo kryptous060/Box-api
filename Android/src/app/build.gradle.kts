@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -66,6 +66,14 @@ android {
   buildFeatures {
     compose = true
     buildConfig = true
+  }
+
+  // Tells Android to ignore or merge duplicate Netty package data files
+  packaging {
+    resources {
+      excludes += "META-INF/INDEX.LIST"
+      excludes += "META-INF/io.netty.versions.properties"
+    }
   }
 }
 
@@ -135,9 +143,9 @@ dependencies {
   implementation("io.ktor:ktor-server-core:2.3.12")
   implementation("io.ktor:ktor-server-netty:2.3.12")
     
-    // Content Negotiation for JSON API responses
-    implementation("io.ktor:ktor-server-content-negotiation:2.3.12")
-    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.12")
+  // Content Negotiation for JSON API responses
+  implementation("io.ktor:ktor-server-content-negotiation:2.3.12")
+  implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.12")
 
   kapt(libs.hilt.android.compiler)
   testImplementation(libs.junit)

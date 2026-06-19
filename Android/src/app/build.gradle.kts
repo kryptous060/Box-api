@@ -65,8 +65,8 @@ extensions.configure<com.android.build.api.dsl.ApplicationExtension> {
     buildConfig = true
   }
 
-  // Modern syntax for package packaging options
-  packagingOptions {
+  // Configured via standard block to avoid internal AGP class casting bugs
+  packaging {
     resources {
       excludes.add("META-INF/INDEX.LIST")
       excludes.add("META-INF/io.netty.versions.properties")

@@ -68,8 +68,8 @@ android {
     buildConfig = true
   }
 
-  // Tells Android to ignore or merge duplicate Netty package data files
-  packaging {
+  // Changed to packagingOptions to match the legacy BaseAppModuleExtension block expectations
+  packagingOptions {
     resources {
       excludes += "META-INF/INDEX.LIST"
       excludes += "META-INF/io.netty.versions.properties"

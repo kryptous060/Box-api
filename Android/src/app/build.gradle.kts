@@ -66,11 +66,9 @@ extensions.configure<com.android.build.api.dsl.ApplicationExtension> {
   }
 
   // Modern syntax for package packaging options
-  packaging {
-    resources {
-      excludes += "META-INF/INDEX.LIST"
-      excludes += "META-INF/io.netty.versions.properties"
-    }
+    packaging.resources {
+    excludes += "META-INF/INDEX.LIST"
+    excludes += "META-INF/io.netty.versions.properties"
   }
 }
 

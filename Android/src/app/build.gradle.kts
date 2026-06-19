@@ -68,8 +68,8 @@ extensions.configure<com.android.build.api.dsl.ApplicationExtension> {
   // Configured via standard block to avoid internal AGP class casting bugs
   packaging {
     resources {
-      excludes.add("META-INF/INDEX.LIST")
-      excludes.add("META-INF/io.netty.versions.properties")
+      excludes += "META-INF/INDEX.LIST"
+      excludes += "META-INF/io.netty.versions.properties"
     }
   }
 }

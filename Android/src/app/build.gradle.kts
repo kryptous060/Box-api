@@ -130,6 +130,14 @@ dependencies {
   // Box: Material 3 adaptive navigation
   implementation(libs.androidx.material3.adaptive.navigation.suite)
   implementation(libs.androidx.material3.window.size)
+  
+  // Ktor Server Core & Netty Engine
+  implementation("io.ktor:ktor-server-core:2.3.12")
+  implementation("io.ktor:ktor-server-netty:2.3.12")
+    
+    // Content Negotiation for JSON API responses
+    implementation("io.ktor:ktor-server-content-negotiation:2.3.12")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.12")
 
   kapt(libs.hilt.android.compiler)
   testImplementation(libs.junit)

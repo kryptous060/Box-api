@@ -28,7 +28,8 @@ plugins {
   kotlin("kapt")
 }
 
-android {
+// Configured via the modern type-safe extension wrapper required for AGP 9.0+
+extensions.configure<com.android.build.api.dsl.ApplicationExtension> {
   namespace = "com.google.ai.edge.gallery"
   compileSdk = 36
 
@@ -59,17 +60,13 @@ android {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
   }
-  kotlinOptions {
-    jvmTarget = "11"
-    freeCompilerArgs += "-Xcontext-receivers"
-  }
   buildFeatures {
     compose = true
     buildConfig = true
   }
 
-  // Changed to packagingOptions to match the legacy BaseAppModuleExtension block expectations
-  packagingOptions {
+  // Modern syntax for package packaging options
+  packaging {
     resources {
       excludes += "META-INF/INDEX.LIST"
       excludes += "META-INF/io.netty.versions.properties"
@@ -170,4 +167,12 @@ protobuf {
 // the OssLicensesMenuActivity still compiles — it just won't have license data at runtime.
 tasks.configureEach {
   if (name.endsWith("OssLicensesTask")) enabled = false
+}
+
+// Modern compiler configuration block replacing deprecated kotlinOptions for AGP 9.0 / Gradle 9.4+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile>().configureEach {
+  compilerOptions {
+    jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
+    freeCompilerArgs.add("-Xcontext-receivers")
+  }
 }

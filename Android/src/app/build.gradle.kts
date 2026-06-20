@@ -28,8 +28,7 @@ plugins {
   kotlin("kapt")
 }
 
-// Configured via the modern type-safe extension wrapper required for AGP 9.0+
-extensions.configure<com.android.build.api.dsl.ApplicationExtension> {
+android {
   namespace = "com.google.ai.edge.gallery"
   compileSdk = 36
 
@@ -65,11 +64,10 @@ extensions.configure<com.android.build.api.dsl.ApplicationExtension> {
     buildConfig = true
   }
 
-  // Configured via standard block to avoid internal AGP class casting bugs
   packaging {
     resources {
-      excludes += "META-INF/INDEX.LIST"
-      excludes += "META-INF/io.netty.versions.properties"
+      excludes.add("META-INF/INDEX.LIST")
+      excludes.add("META-INF/io.netty.versions.properties")
     }
   }
 }

@@ -113,7 +113,7 @@ dependencies {
     implementation("io.ktor:ktor-server-content-negotiation:2.3.12")
     implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.12")
 
-    kapt(libs.hilt.android.compiler)
+    ksp(libs.hilt.android.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

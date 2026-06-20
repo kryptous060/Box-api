@@ -24,7 +24,8 @@ plugins {
     alias(libs.plugins.hilt.application)
     alias(libs.plugins.oss.licenses)
     alias(libs.plugins.ksp)
-    kotlin("kapt")
+    // FIX: Use the specific ID instead of the shorthand to avoid extension collision
+    id("org.jetbrains.kotlin.kapt") 
 }
 
 android {

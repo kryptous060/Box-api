@@ -80,10 +80,16 @@
             <!-- Security: FLAG_SECURE prevents screenshots/screen recording -->
             <meta-data android:name="android.activity.windowSecure" android:value="true" />
             <!-- This is for putting the app into launcher -->
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <activity
+                android:name="com.google.ai.edge.gallery.MainActivity"
+                android:exported="true">
+    
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+    
+            </activity>
 
             <!-- This is for deep linking -->
             <intent-filter>

@@ -11,7 +11,6 @@ plugins {
     alias(libs.plugins.hilt.application)
     // REMOVED: alias(libs.plugins.oss.licenses)
     alias(libs.plugins.ksp)
-    id("org.jetbrains.kotlin.kapt")
 }
 
 android {

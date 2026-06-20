@@ -5,12 +5,11 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.google.services) apply false
-    // kotlin-android is removed here because android.builtInKotlin=true handles it
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.protobuf)
     alias(libs.plugins.hilt.application)
-    alias(libs.plugins.oss.licenses)
+    // REMOVED: alias(libs.plugins.oss.licenses)
     alias(libs.plugins.ksp)
     id("org.jetbrains.kotlin.kapt")
 }
@@ -89,10 +88,12 @@ dependencies {
     implementation(libs.protobuf.javalite)
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
-    implementation(libs.play.services.oss.licenses)
+    // REMOVED: implementation(libs.play.services.oss.licenses)
+    
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.messaging)
+    
     implementation(libs.androidx.exifinterface)
     implementation(libs.moshi.kotlin)
     implementation(libs.androidx.biometric)
@@ -106,10 +107,12 @@ dependencies {
     implementation(project(":whisper"))
     implementation(libs.androidx.material3.adaptive.navigation.suite)
     implementation(libs.androidx.material3.window.size)
+    
     implementation("io.ktor:ktor-server-core:2.3.12")
     implementation("io.ktor:ktor-server-netty:2.3.12")
     implementation("io.ktor:ktor-server-content-negotiation:2.3.12")
     implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.12")
+
     kapt(libs.hilt.android.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -134,9 +137,7 @@ protobuf {
     }
 }
 
-tasks.configureEach {
-    if (name.endsWith("OssLicensesTask")) enabled = false
-}
+// REMOVED: The tasks.configureEach block for OssLicensesTask
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile>().configureEach {
     compilerOptions {

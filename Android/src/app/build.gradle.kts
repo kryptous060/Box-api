@@ -17,14 +17,13 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.google.services) apply false
-    alias(libs.plugins.kotlin.android)
+    // REMOVE THIS LINE: alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.protobuf)
     alias(libs.plugins.hilt.application)
     alias(libs.plugins.oss.licenses)
     alias(libs.plugins.ksp)
-    // FIX: Use the specific ID instead of the shorthand to avoid extension collision
     id("org.jetbrains.kotlin.kapt") 
 }
 

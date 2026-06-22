@@ -15,7 +15,7 @@ plugins {
 }
 
 android {
-    namespace = "com.google.ai.edge.gallery"
+    namespace = "com.box.gallery"
     compileSdk = 35
 
     defaultConfig {

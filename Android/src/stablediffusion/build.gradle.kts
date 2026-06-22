@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.google.ai.edge.gallery.stablediffusion"
+    namespace = "com.box.gallery.stablediffusion"
     compileSdk = 36
     ndkVersion = "27.2.12479018"
 

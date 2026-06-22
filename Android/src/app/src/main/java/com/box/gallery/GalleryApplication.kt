@@ -17,10 +17,10 @@
 package com.box.gallery
 
 import android.app.Application
-import com.google.ai.edge.gallery.data.DataStoreRepository
-import com.google.ai.edge.gallery.security.OfflineMode
-import com.google.ai.edge.gallery.security.SecurityAuditLog
-import com.google.ai.edge.gallery.ui.theme.ThemeSettings
+import com.box.gallery.data.DataStoreRepository
+import com.box.gallery.security.OfflineMode
+import com.box.gallery.security.SecurityAuditLog
+import com.box.gallery.ui.theme.ThemeSettings
 import com.google.firebase.FirebaseApp
 import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject
@@ -44,3 +44,4 @@ class GalleryApplication : Application() {
     SecurityAuditLog.log(this, "APPLICATION_CREATED")
   }
 }
+

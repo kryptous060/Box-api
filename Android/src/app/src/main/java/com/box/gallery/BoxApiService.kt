@@ -64,3 +64,4 @@ data class ChatRequest(val prompt: String)
 @Serializable
 data class ChatResponse(val reply
                         : String)
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Android/src/llama.cpp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Android/src/stable-diffusion.cpp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Android/src/stable-diffusion.cpp/examples/server/frontend" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Android/src/stable-diffusion.cpp/ggml" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Android/src/stable-diffusion.cpp/thirdparty/libwebm" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Android/src/stable-diffusion.cpp/thirdparty/libwebp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Android/src/whisper.cpp" vcs="Git" />
+  </component>
+</project>

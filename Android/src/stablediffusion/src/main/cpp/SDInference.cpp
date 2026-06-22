@@ -20,7 +20,7 @@ static void progress_callback(int step, int steps, float /*time*/, void* /*data*
 extern "C" {
 
 JNIEXPORT jlong JNICALL
-Java_com_google_ai_edge_gallery_stablediffusion_StableDiffusion_loadModelNative(
+Java_com_box_gallery_stablediffusion_StableDiffusion_loadModelNative(
         JNIEnv* env, jobject /*thiz*/, jstring modelPath, jint nThreads) {
     const char* path = env->GetStringUTFChars(modelPath, nullptr);
     LOGI("Loading SD model: %s (threads=%d)", path, nThreads);
@@ -54,7 +54,7 @@ Java_com_google_ai_edge_gallery_stablediffusion_StableDiffusion_loadModelNative(
 }
 
 JNIEXPORT jbyteArray JNICALL
-Java_com_google_ai_edge_gallery_stablediffusion_StableDiffusion_generateImageNative(
+Java_com_box_gallery_stablediffusion_StableDiffusion_generateImageNative(
         JNIEnv* env, jobject /*thiz*/, jlong ctxHandle,
         jstring prompt, jstring negPrompt,
         jint width, jint height, jint steps, jfloat cfgScale, jlong seed) {
@@ -121,19 +121,19 @@ Java_com_google_ai_edge_gallery_stablediffusion_StableDiffusion_generateImageNat
 }
 
 JNIEXPORT jint JNICALL
-Java_com_google_ai_edge_gallery_stablediffusion_StableDiffusion_getProgressStep(
+Java_com_box_gallery_stablediffusion_StableDiffusion_getProgressStep(
         JNIEnv* /*env*/, jobject /*thiz*/) {
     return (jint)g_progress_step.load();
 }
 
 JNIEXPORT jint JNICALL
-Java_com_google_ai_edge_gallery_stablediffusion_StableDiffusion_getProgressTotal(
+Java_com_box_gallery_stablediffusion_StableDiffusion_getProgressTotal(
         JNIEnv* /*env*/, jobject /*thiz*/) {
     return (jint)g_progress_total.load();
 }
 
 JNIEXPORT void JNICALL
-Java_com_google_ai_edge_gallery_stablediffusion_StableDiffusion_freeContextNative(
+Java_com_box_gallery_stablediffusion_StableDiffusion_freeContextNative(
         JNIEnv* /*env*/, jobject /*thiz*/, jlong ctxHandle) {
     if (ctxHandle == 0L) return;
     sd_ctx_t* ctx = reinterpret_cast<sd_ctx_t*>(ctxHandle);

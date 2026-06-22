@@ -11,7 +11,7 @@
 extern "C" {
 
 JNIEXPORT jlong JNICALL
-Java_com_google_ai_edge_gallery_whisper_WhisperEngine_loadModelNative(
+Java_com_box_gallery_whisper_WhisperEngine_loadModelNative(
         JNIEnv* env, jobject, jstring modelPath) {
     const char* path = env->GetStringUTFChars(modelPath, nullptr);
     LOGI("Loading whisper model: %s", path);
@@ -31,7 +31,7 @@ Java_com_google_ai_edge_gallery_whisper_WhisperEngine_loadModelNative(
 }
 
 JNIEXPORT jstring JNICALL
-Java_com_google_ai_edge_gallery_whisper_WhisperEngine_transcribeNative(
+Java_com_box_gallery_whisper_WhisperEngine_transcribeNative(
         JNIEnv* env, jobject, jlong handle, jfloatArray audioData, jstring language) {
     auto* ctx = reinterpret_cast<whisper_context*>(handle);
     if (!ctx) return env->NewStringUTF("");
@@ -79,7 +79,7 @@ Java_com_google_ai_edge_gallery_whisper_WhisperEngine_transcribeNative(
 }
 
 JNIEXPORT void JNICALL
-Java_com_google_ai_edge_gallery_whisper_WhisperEngine_freeModelNative(
+Java_com_box_gallery_whisper_WhisperEngine_freeModelNative(
         JNIEnv*, jobject, jlong handle) {
     auto* ctx = reinterpret_cast<whisper_context*>(handle);
     if (ctx) {

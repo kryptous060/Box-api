@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.google.ai.edge.gallery.smollm"
+    namespace = "com.box.gallery.smollm"
     compileSdk = 36
     ndkVersion = "27.2.12479018"
 

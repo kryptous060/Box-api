@@ -31,6 +31,10 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
     <uses-permission android:name="com.google.android.apps.aicore.service.BIND_SERVICE" />
 
@@ -52,7 +56,8 @@
 
     <application
         android:name="com.box.gallery.GalleryApplication"
-        android:allowBackup="false"
+		android:requestLegacyExternalStorage="true"
+        android:allowBackup="true"
         android:hasFragileUserData="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -65,11 +70,7 @@
         android:memtagMode="async"
         android:enableOnBackInvokedCallback="true"
         tools:targetApi="36">
-        <!--
-          android:configChanges="uiMode" tells the system don't destroy and
-          recreate the activity when UI mode changes (e.g. setting dark mode).
-          Instead, just recompose the view.
-         -->
+        
         <activity
             android:name="com.box.gallery.MainActivity"
             android:exported="true"
@@ -77,28 +78,23 @@
             android:windowSoftInputMode="adjustResize"
             android:configChanges="uiMode"
             tools:ignore="DiscouragedApi">
-            <!-- Security: FLAG_SECURE prevents screenshots/screen recording -->
+            
             <meta-data android:name="android.activity.windowSecure" android:value="true" />
-            <!-- This is for putting the app into launcher -->
-            <activity
-                android:name="com.google.ai.edge.gallery.MainActivity"
-                android:exported="true">
-    
-                <intent-filter>
-                    <action android:name="android.intent.action.MAIN" />
-                    <category android:name="android.intent.category.LAUNCHER" />
-                </intent-filter>
-    
-            </activity>
 
-            <!-- This is for deep linking -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
                 <data android:scheme="com.box.gallery" />
+            </intent-filter>
+        </activity>
+
+        <activity 
+            android:name="com.google.ai.edge.gallery.MainActivity" 
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
@@ -158,10 +154,12 @@
         <uses-native-library android:name="libvndksupport.so" android:required="false"/>
         <uses-native-library android:name="libOpenCL.so" android:required="false"/>
         <uses-native-library android:name="libcdsprpc.so" android:required="false" />
-     <service
-        android:name="com.box.gallery.BoxApiService"
-        android:enabled="true"
-        android:exported="false" />
+        
+        <!-- Move this service inside the application tag -->
+        <service
+            android:name="com.box.gallery.BoxApiService"
+            android:enabled="true"
+            android:exported="false" />
     </application>
 
 </manifest>

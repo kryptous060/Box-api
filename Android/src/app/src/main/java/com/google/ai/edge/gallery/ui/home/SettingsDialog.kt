@@ -16,7 +16,7 @@
 
 package com.google.ai.edge.gallery.ui.home
 
-import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
+// import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import android.app.UiModeManager
 import android.content.Context
 import android.content.Intent
@@ -419,7 +419,7 @@ fun SettingsDialog(
             )
           }
 
-          // Third party licenses.
+/* // Third party licenses.
           Column(modifier = Modifier.fillMaxWidth().semantics(mergeDescendants = true) {}) {
             Text(
               "Third-party libraries",
@@ -436,6 +436,7 @@ fun SettingsDialog(
               Text("View licenses")
             }
           }
+          */
 
           // About
           Column(

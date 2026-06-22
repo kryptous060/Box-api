@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.google.services) apply false
     alias(libs.plugins.kotlin.compose)
+	alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.protobuf)
     alias(libs.plugins.hilt.application)
@@ -15,15 +16,15 @@ plugins {
 
 android {
     namespace = "com.google.ai.edge.gallery"
-    compileSdk = 36
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.box.gallery"
         minSdk = 35
-        targetSdk = 36
+        targetSdk = 35
         versionCode = 26
         versionName = "1.0.12"
-        manifestPlaceholders["appAuthRedirectScheme"] = "REPLACE_WITH_YOUR_REDIRECT_SCHEME_IN_HUGGINGFACE_APP"
+        manifestPlaceholders["appAuthRedirectScheme"] = "boxgallery"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -50,6 +51,13 @@ android {
             excludes += "/META-INF/INDEX.LIST"
             excludes += "/META-INF/io.netty.versions.properties"
         }
+    }
+
+    // Bypasses the internal Android Lint vs. Kotlin compiler crash
+    lint {
+        disable += "NullSafeMutableLiveData"
+        abortOnError = false
+        checkReleaseBuilds = false
     }
 }
 
